@@ -457,6 +457,9 @@ function updateUI(user) {
 }
 
 $(function() {
+    $('#memoButton').click(function(){
+    $('#memoInput').toggle();
+})
     // Firebaseの初期化
     try {
         firebase.initializeApp(firebaseConfig);
@@ -518,6 +521,9 @@ window.addEventListener('unload', () => {
 <body>
     <div class="container">
         <h1>掲示板アプリ</h1>
+        <button id="memoButton" class="btn-primary">メモ</button>
+        <textarea id="memoInput" class="form-control"
+                          placeholder="メモを入力してください"></textarea>
 
         <!-- メッセージ表示エリア -->
         <div id="messageArea"></div>
@@ -545,7 +551,6 @@ window.addEventListener('unload', () => {
         <div class="user-info logged-in">
             <span>ログイン中：<span id="userEmail"></span></span>
             <button id="logoutButton" class="btn-secondary">ログアウト</button>
-            <button id="memoButton" class="btn-secondary">メモ</button>
         </div>
 
         <!-- 投稿フォーム（ログイン時表示） -->
